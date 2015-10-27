@@ -3,15 +3,25 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  if arr.length >= 1
+    arr.reduce(:+)
+  else
+    0
+  end
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.length == 0
+    0
+  elsif arr.length == 1
+    arr[0]
+  else
+    sum arr.sort[-2..-1]
+  end
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  arr.permutation(2).any? {|pair| sum(pair) == n}
 end
 
 # Part 2
